@@ -1,0 +1,7 @@
+# NODE FILES
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+
+# REPORT OUTPUTS
+reports/
