@@ -12,7 +12,9 @@ export const config: Config = {
 	],
 	framework: 'custom',
 	frameworkPath: require.resolve( 'protractor-cucumber-framework' ),
-	specs: [],
+	specs: [
+		'../../features/*.feature'
+	],
 	
 	onPrepare: () => {
 		browser.driver.manage().window().setSize( 1920, 1080 );
@@ -24,8 +26,8 @@ export const config: Config = {
 		strict: true,
 		format: [ 'foundation' ],
 		require: [
-			'./hooks.ts',
-			'../steps/**/*.step.ts'
+			'../../setup/hooks.ts',
+			'../../steps/**/*.step.ts'
 		]
 	}
 

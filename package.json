@@ -5,6 +5,13 @@
 	"main": "index.js",
 	"author": "Olly John",
 	"license": "MIT",
+
+	"scripts": {
+		"pretest": "tsc",
+		"test": "protractor compiled/setup/config.js"
+	},
+
+
 	"devDependencies": {
 		"@types/cucumber": "0.0.38",
 		"@types/node": "^8.0.3",
