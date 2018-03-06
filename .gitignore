@@ -3,5 +3,8 @@ yarn-debug.log*
 yarn-error.log*
 node_modules/
 
+# IDE FILES
+.vscode/
+
 # REPORT OUTPUTS
 reports/
