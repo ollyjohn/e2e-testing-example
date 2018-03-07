@@ -38,7 +38,7 @@ defineSupportCode( ( { registerHandler, registerListener, After, setDefaultTimeo
 		jsonFile: reports.json.tgt,
 		output: reports.html.tgt,
 		reportSuiteScenarios: true,
-		launchReport: true,
+		launchReport: false,
 		brandTitle: 'E2E Tests'
 	};
 

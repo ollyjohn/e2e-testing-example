@@ -8,7 +8,8 @@
 
 	"scripts": {
 		"pretest": "tsc",
-		"test": "protractor compiled/setup/config.js"
+		"test": "protractor compiled/setup/config.js",
+		"posttest": "open reports/html/report.html"
 	},
 
 
