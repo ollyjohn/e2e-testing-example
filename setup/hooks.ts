@@ -47,7 +47,7 @@ defineSupportCode( ( { registerHandler, registerListener, After, setDefaultTimeo
 			mkdirp.sync( reports.json.dir );
 		}
 		try {
-			fs.writeFileSync( reports.json.dir, message );
+			fs.writeFileSync( reports.json.tgt, message );
 			reporter.generate( reportOptions );
 		} catch ( error ) {
 			if ( error ) {
