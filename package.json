@@ -6,10 +6,10 @@
 	"author": "Olly John",
 	"license": "MIT",
 	"scripts": {
-		"config": "node compiled/utils/config.js",
+		"config": "node utils/config.js",
 		"compile": "tsc",
 
-		"postinstall": "yarn run compile && node compiled/utils/dynamo.js",
+		"postinstall": "yarn run compile && node utils/dynamo.js",
 
 		"test": "protractor compiled/config/config.js",
 		"posttest": "open reports/html/report.html",
