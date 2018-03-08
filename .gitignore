@@ -6,6 +6,9 @@ node_modules/
 # IDE FILES
 .vscode/
 
+# OS FILES
+**/.DS_Store*
+
 # REPORT OUTPUTS
 reports/
 
