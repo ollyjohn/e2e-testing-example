@@ -14,10 +14,10 @@
 		"test": "protractor compiled/config/config.js",
 		"posttest": "open reports/html/report.html",
 
-		"test:chrome": "yarn run config -- chrome && yarn test",
-		"test:firefox": "yarn run config -- firefox && yarn test",
-		"test:ie": "yarn run config -- ie && yarn test",
-		"test:edge": "yarn run config -- edge && yarn test"
+		"test:chrome": "yarn run config chrome && yarn test",
+		"test:firefox": "yarn run config firefox && yarn test",
+		"test:ie": "yarn run config ie && yarn test",
+		"test:edge": "yarn run config edge && yarn test"
 	},
 	"devDependencies": {
 		"@types/cucumber": "0.0.38",
