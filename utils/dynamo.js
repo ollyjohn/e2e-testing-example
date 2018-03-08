@@ -2,8 +2,8 @@
  * Dynamically populate the browsers.json file for Selenoid as they seem incapable of doing it themselves...
  */
 const os = require( 'os' );
-const fs = require( 'fs' );
 const colours = require( 'colors/safe' );
+const fs = require( 'fs' );
 
 console.log( colours.dim( 'Launching script...' ) );
 

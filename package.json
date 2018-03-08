@@ -6,15 +6,18 @@
 	"author": "Olly John",
 	"license": "MIT",
 	"scripts": {
-		"posttest": "open reports/html/report.html",
-		"pretest": "tsc",
-		"postinstall": "node config/utils/dynamo.js",
+		"config": "node compiled/utils/config.js",
+		"compile": "tsc",
+
+		"postinstall": "yarn run compile && node compiled/utils/dynamo.js",
+
 		"test": "protractor compiled/config/config.js",
-		"test:chrome": "tsc && cp compiled/config/config.chrome.js compiled/config/config.js && yarn test",
-		"test:firefox": "tsc && cp compiled/config/config.firefox.js compiled/config/config.js && yarn test",
-		"test:opera": "tsc && cp compiled/config/config.opera.js compiled/config/config.js && yarn test",
-		"test:ie": "tsc && cp compiled/config/config.ie.js compiled/config/config.js && yarn test",
-		"test:edge": "tsc && cp compiled/config/config.edge.js compiled/config/config.js && yarn test"
+		"posttest": "open reports/html/report.html",
+
+		"test:chrome": "yarn run config -- chrome && yarn test",
+		"test:firefox": "yarn run config -- firefox && yarn test",
+		"test:ie": "yarn run config -- ie && yarn test",
+		"test:edge": "yarn run config -- edge && yarn test"
 	},
 	"devDependencies": {
 		"@types/cucumber": "0.0.38",
