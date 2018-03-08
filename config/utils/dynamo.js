@@ -8,7 +8,7 @@ const colours = require( 'colors/safe' );
 console.log( colours.dim( 'Launching script...' ) );
 
 console.log( colours.dim( 'Finding home directory...' ) );
-const homeDir = os.homedir();
+let homeDir = os.homedir();
 const targetDir = `${ homeDir }/.aerokube/selenoid/`;
 const windows = os.platform() === 'win32';
 const mac = os.platform() === 'darwin';
@@ -92,7 +92,7 @@ drivers[ 'firefox' ] = {
     'versions': {
         'latest': {
             'image': [
-                `${ homeDir }\/.aerokube\/selenoid\/geckodrive${ windows ? '.exe' : '' }`,
+                `${ homeDir }\/.aerokube\/selenoid\/geckodriver${ windows ? '.exe' : '' }`,
                 '--host',
                 '::',
                 '--log',
