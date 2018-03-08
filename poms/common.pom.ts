@@ -9,4 +9,8 @@ export class CommonPOM {
 		return new Promise( (resolve: Function) => setTimeout( resolve, duration ) );
 	}
 
+	static urls = {
+		google: 'https://google.co.uk'
+	}
+
 }

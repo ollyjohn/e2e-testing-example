@@ -5,14 +5,15 @@
 	"main": "index.js",
 	"author": "Olly John",
 	"license": "MIT",
-
 	"scripts": {
-		"pretest": "tsc",
-		"test": "protractor compiled/setup/config.js",
-		"posttest": "open reports/html/report.html"
+		"posttest": "open reports/html/report.html",
+		"test:all": "cp compiled/config/",
+		"test:chrome": "tsc && cp compiled/config/config.chrome.js compiled/config/config.js && yarn test",
+		"test:firefox": "tsc && cp compiled/config/config.firefox.js compiled/config/config.js && yarn test",
+		"test:opera": "tsc && cp compiled/config/config.opera.js compiled/config/config.js && yarn test",
+		"test:ie": "tsc && cp compiled/config/config.ie.js compiled/config/config.js && yarn test",
+		"test:edge": "tsc && cp compiled/config/config.edge.js compiled/config/config.js && yarn test"
 	},
-
-
 	"devDependencies": {
 		"@types/cucumber": "0.0.38",
 		"@types/node": "^8.0.3",
@@ -24,7 +25,8 @@
 		"protractor-cucumber-framework": "^3.1.1"
 	},
 	"dependencies": {
-		"cucumber-html-reporter": "git+https://github.com/ollyjohn/cucumber-html-reporter.git",
+		"colors": "^1.1.2",
+		"cucumber-html-reporter": "^4.0.2",
 		"protractor": "^5.1.2",
 		"ts-node": "^3.1.0",
 		"typescript": "^2.2.1"
