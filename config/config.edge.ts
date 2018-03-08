@@ -6,7 +6,7 @@ export const config: Config = {
 	baseUrl: 'https://google.com',
 	multiCapabilities: [
 		{
-			browserName: 'edge',
+			browserName: 'MicrosoftEdge',
 			directConnect: true
 		}
 	],

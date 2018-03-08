@@ -7,7 +7,9 @@
 	"license": "MIT",
 	"scripts": {
 		"posttest": "open reports/html/report.html",
-		"test:all": "cp compiled/config/",
+		"pretest": "tsc",
+		"postinstall": "node config/utils/dynamo.js",
+		"test": "protractor compiled/config/config.js",
 		"test:chrome": "tsc && cp compiled/config/config.chrome.js compiled/config/config.js && yarn test",
 		"test:firefox": "tsc && cp compiled/config/config.firefox.js compiled/config/config.js && yarn test",
 		"test:opera": "tsc && cp compiled/config/config.opera.js compiled/config/config.js && yarn test",

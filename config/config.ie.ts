@@ -6,7 +6,7 @@ export const config: Config = {
 	baseUrl: 'https://google.com',
 	multiCapabilities: [
 		{
-			browserName: 'ie',
+			browserName: 'internet explorer',
 			directConnect: true
 		}
 	],
