@@ -38,12 +38,11 @@
 		"protractor-cucumber-framework": "^3.1.1"
 	},
 	"dependencies": {
-		"colors": "^1.1.2",
-		"cucumber-html-reporter": "^4.0.2",
-		"opn": "^5.2.0",
-		"path": "^0.12.7",
+		"cucumber-html-reporter": "git+https://github.com/ollyjohn/cucumber-html-reporter.git",
 		"protractor": "^5.1.2",
 		"ts-node": "^3.1.0",
-		"typescript": "^2.2.1"
+		"typescript": "^2.2.1",
+		"opn": "^5.2.0",
+		"colors": "^1.1.2"
 	}
 }

@@ -5,6 +5,11 @@ const os = require( 'os' );
 const colours = require( 'colors/safe' );
 const fs = require( 'fs' );
 
+const systems = {
+    darwin: 'MacOS',
+    win32: 'Windows'
+};
+
 console.log( colours.dim( 'Launching script...' ) );
 
 console.log( colours.dim( 'Finding home directory...' ) );
@@ -127,9 +132,9 @@ if ( mac ) {
 }
 
 // write to the file
-console.log( colours.dim( 'Creating ' ) );
-fs.writeFileSync( `${ targetDir }/browsers.json`, JSON.stringify( drivers ), null, 4 );
-console.log( colours.green( 'Success. File created.' ) );
+console.log( colours.dim( `Generating config file for ${ systems[ os.platform() ] }` ) );
+fs.writeFile( `${ targetDir }/browsers.json`, JSON.stringify( drivers ), null, 4 );
+console.log( colours.green( `Success. File created at ${ targetDir }` ) );
 
 console.log( colours.dim( 'Exiting...' ) );
 

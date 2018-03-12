@@ -2,7 +2,6 @@ const browser = process.argv[ 2 ];
 const cwd = process.cwd();
 const fs = require( 'fs' );
 const colours = require( 'colors' );
-const path = require( 'path' );
 
 if ( browser === undefined ) { 
 	console.log( colours.bold.red( 'Something went wrong: ' ) );
