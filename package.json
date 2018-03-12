@@ -6,16 +6,25 @@
 	"license": "MIT",
 	"scripts": {
 		"config": "node utils/config.js",
+		"platformer": "node utils/platformer.js",
 		"compile": "tsc",
-		"postinstall": "yarn run compile && node utils/dynamo.js",
+		"reporter": "node utils/report.js",
+
+		"postinstall": "yarn run compile && yarn run platformer",
+
 		"test": "protractor compiled/config/config.js",
-		"posttest": "open reports/html/report.html",
+		"posttest": "yarn run reporter",
+		
 		"test:chrome": "yarn run config chrome && yarn test",
 		"test:firefox": "yarn run config firefox && yarn test",
+		
 		"test:safari": "yarn run config safari && yarn test",
+		
 		"test:ie": "yarn run config ie && yarn test",
 		"test:edge": "yarn run config edge && yarn test",
+		
 		"test:windows": "yarn run test:ie && yarn run test:edge && yarn run test:chrome && yarn run test:firefox",
+		
 		"test:mac": "yarn run test:safari && yarn run test:chrome && yarn run test:firefox"
 	},
 	"devDependencies": {
