@@ -118,11 +118,19 @@ drivers[ 'opera' ] = {
     }
 };
 
+if ( windows ) { 
+    delete drivers.safari;
+}
+if ( mac ) {
+    delete drivers[ 'internet explorer' ];
+    delete drivers.edge;
+}
+
 // write to the file
 console.log( colours.dim( 'Creating ' ) );
 fs.writeFileSync( `${ targetDir }/browsers.json`, JSON.stringify( drivers ), null, 4 );
-console.log( colours.bold( colours.green( 'Success. File created.' ) ) );
+console.log( colours.green( 'Success. File created.' ) );
 
-console.log( colours.bold( colours.dim( 'Exiting...' ) ) );
+console.log( colours.dim( 'Exiting...' ) );
 
 process.exit();

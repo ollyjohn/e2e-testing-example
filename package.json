@@ -2,22 +2,21 @@
 	"name": "e2e",
 	"version": "1.0.0",
 	"description": "E2E tests",
-	"main": "index.js",
 	"author": "Olly John",
 	"license": "MIT",
 	"scripts": {
 		"config": "node utils/config.js",
 		"compile": "tsc",
-
 		"postinstall": "yarn run compile && node utils/dynamo.js",
-
 		"test": "protractor compiled/config/config.js",
 		"posttest": "open reports/html/report.html",
-
 		"test:chrome": "yarn run config chrome && yarn test",
 		"test:firefox": "yarn run config firefox && yarn test",
+		"test:safari": "yarn run config safari && yarn test",
 		"test:ie": "yarn run config ie && yarn test",
-		"test:edge": "yarn run config edge && yarn test"
+		"test:edge": "yarn run config edge && yarn test",
+		"test:windows": "yarn run test:ie && yarn run test:edge && yarn run test:chrome && yarn run test:firefox",
+		"test:mac": "yarn run test:safari && yarn run test:chrome && yarn run test:firefox"
 	},
 	"devDependencies": {
 		"@types/cucumber": "0.0.38",
@@ -32,6 +31,8 @@
 	"dependencies": {
 		"colors": "^1.1.2",
 		"cucumber-html-reporter": "^4.0.2",
+		"opn": "^5.2.0",
+		"path": "^0.12.7",
 		"protractor": "^5.1.2",
 		"ts-node": "^3.1.0",
 		"typescript": "^2.2.1"
